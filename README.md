@@ -1,6 +1,6 @@
 # My personal scripts to setup a new OSX
 
-Based on Ruyadorno`s [installme-osx](https://github.com/ruyadorno/installme-osx) repository, thanks my friend for this amazing job.
+Based on [Ruyadorno's](https://github.com/ruyadorno) [installme-osx](https://github.com/ruyadorno/installme-osx) repository, thanks my friend for this amazing job.
 
 
 To start a new setup, simply run:
