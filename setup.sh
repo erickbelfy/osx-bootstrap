@@ -126,7 +126,7 @@ git clone https://github.com/hail2u/vim-css3-syntax
 git clone https://github.com/othree/html5.vim.git
 git clone https://github.com/pangloss/vim-javascript.git
 git clone https://github.com/nathanaelkane/vim-indent-guides.git
-
+git clone https://github.com/mxw/vim-jsx.git
 
 # Configure Command-T
 cd ~/.vim/bundle/command-t/ruby/command-t
@@ -136,7 +136,7 @@ make
 
 ## Get dotfiles repo
 cd ~/Documents/repos/
-git clone https://github.com/ruyadorno/dotfiles.git
+git clone https://github.com/erickbelfy/dotfiles.git
 
 ## Get sexy bash prompt
 cd ~/Documents/repos/
