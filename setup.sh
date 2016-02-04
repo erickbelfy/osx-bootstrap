@@ -114,8 +114,6 @@ git clone https://github.com/altercation/vim-colors-solarized.git
 git clone https://github.com/twerth/ir_black.git
 git clone https://github.com/Lokaltog/vim-easymotion.git
 git clone https://github.com/nvie/vim-flake8.git
-git clone https://github.com/mhinz/vim-signify.git
-git clone https://github.com/millermedeiros/vim-statline.git
 git clone https://github.com/AndrewRadev/splitjoin.vim.git
 git clone https://github.com/godlygeek/tabular.git
 git clone https://github.com/elzr/vim-json.git
