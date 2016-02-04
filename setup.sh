@@ -71,14 +71,14 @@ installcask slack
 
 #python packages
 sudo easy_install pip
+sudo pip install pip --upgrade
 sudo pip install virtualenv
 sudo pip install virtualenvwrapper
+sudo pip install --user git+git://github.com/powerline/powerline
 
 
 # games
 installcask steam
-installcask minecraft
-installcask openttd
 
 
 # npm dependencies that I'm not likely to live without
