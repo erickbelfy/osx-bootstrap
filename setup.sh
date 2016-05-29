@@ -37,7 +37,8 @@ brew install tig
 brew install ffind
 
 # MacVim for terminal
-brew install macvim
+brew install macvim --with-cscope --with-lua
+brew linkapps macvim
 alias vim='mvim -v'
 
 # OSX native apps
@@ -95,6 +96,9 @@ npm install -g http-server
 mkdir -p ~/.vim/autoload ~/.vim/bundle && \
     curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 # Go to bundle folder
 cd ~/.vim/bundle/
 
@@ -149,6 +153,7 @@ make install
 ## Setup symlinks
 cd ~/
 ln -s Documents/repos/dotfiles/bashrc .bash_profile
+ln -s Documents/repos/dotfiles/eslintrc .eslintrc
 ln -s Documents/repos/dotfiles/gitconfig .gitconfig
 ln -s Documents/repos/dotfiles/gitignore_global .gitignore_global
 ln -s Documents/repos/dotfiles/hgrc .hgrc
