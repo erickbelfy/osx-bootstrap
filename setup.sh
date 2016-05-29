@@ -84,11 +84,12 @@ installcask steam
 # npm dependencies that I'm not likely to live without
 npm install -g jshint
 npm install -g jsxhint
+npm install -g eslint babel-eslint
+npm install -g babel-eslint
 npm install -g grunt-cli
 npm install -g gulp
 npm install -g yo
 npm install -g http-server
-
 
 # vim setup
 mkdir -p ~/.vim/autoload ~/.vim/bundle && \
