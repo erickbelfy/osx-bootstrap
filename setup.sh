@@ -91,6 +91,9 @@ npm install -g grunt-cli
 npm install -g gulp
 npm install -g yo
 npm install -g http-server
+npm install -g git-bc
+npm install -g ntl
+npm install -g ipt
 
 # vim setup
 mkdir -p ~/.vim/autoload ~/.vim/bundle && \
