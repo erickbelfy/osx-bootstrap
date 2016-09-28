@@ -35,6 +35,12 @@ brew install tree
 brew install wget
 brew install tig
 brew install ffind
+brew install Caskroom/cask/vagrant
+brew install Caskroom/cask/vagrant-manager
+brew install docker
+brew install boot2docker
+brew install bash-completion
+brew tap homebrew/completions
 
 # MacVim for terminal
 brew install macvim --with-cscope --with-lua
