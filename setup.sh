@@ -11,6 +11,7 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 
 brew update
 brew upgrade
+brew install caskroom/cask/brew-cask
 
 # Core utils
 brew install coreutils
@@ -41,6 +42,7 @@ brew install docker
 brew install boot2docker
 brew install bash-completion
 brew tap homebrew/completions
+brew install https://raw.githubusercontent.com/BurntSushi/ripgrep/master/pkg/brew/ripgrep.rb
 
 # MacVim for terminal
 brew install macvim --with-cscope --with-lua
