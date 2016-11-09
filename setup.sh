@@ -144,6 +144,7 @@ git clone https://github.com/vim-airline/vim-airline.git
 git clone https://github.com/nathanaelkane/vim-indent-guides.git
 git clone https://github.com/mxw/vim-jsx.git
 git clone https://github.com/digitaltoad/vim-jade.git
+git clone https://github.com/posva/vim-vue.git
 
 # Configure Command-T
 cd ~/.vim/bundle/command-t/ruby/command-t
