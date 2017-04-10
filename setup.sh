@@ -102,6 +102,7 @@ npm install -g http-server
 npm install -g git-bc
 npm install -g ntl
 npm install -g ipt
+npm install -g flow-bin
 
 # vim setup
 mkdir -p ~/.vim/autoload ~/.vim/bundle && \
@@ -147,6 +148,7 @@ git clone https://github.com/mxw/vim-jsx.git
 git clone https://github.com/digitaltoad/vim-jade.git
 git clone https://github.com/posva/vim-vue.git
 git clone https://github.com/isRuslan/vim-es6.git
+git clone git://github.com/flowtype/vim-flow.git
 
 # Configure Command-T
 cd ~/.vim/bundle/command-t/ruby/command-t
