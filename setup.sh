@@ -169,6 +169,8 @@ make install
 
 ## Setup symlinks
 cd ~/
+
+ln -s Documents/repos/dotfiles/gitmessage .gitmessage
 ln -s Documents/repos/dotfiles/bashrc .bash_profile
 ln -s Documents/repos/dotfiles/eslintrc .eslintrc
 ln -s Documents/repos/dotfiles/gitconfig .gitconfig
@@ -176,6 +178,8 @@ ln -s Documents/repos/dotfiles/gitignore_global .gitignore_global
 ln -s Documents/repos/dotfiles/hgrc .hgrc
 ln -s Documents/repos/dotfiles/vimrc .vimrc
 
+#git config commands
+git config --global commit.template ~/.gitmessage
 
 # Set bash as default shell
 chsh -s /bin/bash
