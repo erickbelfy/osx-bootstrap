@@ -1,189 +1,156 @@
 #!/bin/sh
 
+#oh my zsh
+echo "--- SETUP OH MY ZSH"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-# setup folder structure
-mkdir ~/Documents/workspace
-mkdir ~/Documents/repos
 
+echo "--- SETUP FOLDER STRUCTURE"
+mkdir -p ~/bin
+mkdir -p ~/Documents/repos
+mkdir -p ~/Documents/workspace
 
-# brew setup
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+# bin will need to be added to $PATH manually here in order have nave ready later on
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+echo "--- SETUP BREW"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# makes sure brew is already available as a command for the reminder of this session
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 brew update
 brew upgrade
-brew install caskroom/cask/brew-cask
 
-# Core utils
+echo "--- BREW INSTALL COREUTILS"
 brew install coreutils
 brew install findutils
 
-# Dependencies
+echo "--- BREW INSTALL DEPS"
 brew install jpeg-turbo
 brew install optipng
 brew install readline
 
-# Apps
+echo "--- BREW INSTALL CLIs"
 brew install the_silver_searcher
-brew install ant
-brew install git
-brew install mercurial
-brew install node
+brew install python3
 brew install irssi
-brew install phantomjs
 brew install unrar
 brew install trash
 brew install tree
 brew install wget
 brew install tig
 brew install ffind
-brew install Caskroom/cask/vagrant
-brew install Caskroom/cask/vagrant-manager
-brew install docker
-brew install boot2docker
-brew install bash-completion
-brew tap homebrew/completions
-brew install https://raw.githubusercontent.com/BurntSushi/ripgrep/master/pkg/brew/ripgrep.rb
+brew install wifi-password
+brew install gpg
+brew install gpg2
+brew install pinentry-mac
+brew install hub
+brew install asciinema
+brew install neovim
+brew install tmux
+brew install fd
+brew install ccache
+brew install github/gh/gh
+brew install bat
+brew install hyperfine
+brew install highlight
+brew install eza
 
-# MacVim for terminal
-brew install macvim --with-cscope --with-lua
-brew linkapps macvim
-alias vim='mvim -v'
+echo "--- SETUP NAVE"
+cd ~/Documents/repos
+git clone https://github.com/isaacs/nave.git
+ln -s ~/Documents/repos/nave/nave.sh ~/bin/nave
 
-# OSX native apps
-brew install caskroom/cask/brew-cask
+echo "--- SETUP NODE"
+nave install latest
 
-function installcask() {
-    brew cask install "${@}" 2> /dev/null
-}
+#echo "--- BREW INSTALL APPS"
+#brew install google-chrome
+#brew install firefox
+#brew install iterm2
 
-# dev-related programs
-installcask atom
-installcask dropbox
-installcask copy
-installcask google-chrome
-installcask firefox
-installcask iterm2
+echo "--- BREW INSTALL UTILS APPS"
+#brew install slack
 
-# utils
-installcask skype
-installcask lastfm
-installcask vlc
-installcask 1password
-installcask camtasia
-installcask cleanmymac
-installcask macpaw-gemini
-installcask flickr-uploadr
-installcask spotify
-installcask licecap
-installcask skitch
-installcask slack
-
-#python packages
-sudo easy_install pip
-sudo pip install pip --upgrade
-sudo pip install virtualenv
-sudo pip install virtualenvwrapper
-sudo pip install --user git+git://github.com/powerline/powerline
-
-
-# games
-installcask steam
-
-
-# npm dependencies that I'm not likely to live without
-npm install -g jshint
-npm install -g jsxhint
-npm install -g eslint babel-eslint
-npm install -g babel-eslint
-npm install -g grunt-cli
-npm install -g gulp
-npm install -g yo
-npm install -g http-server
-npm install -g git-bc
-npm install -g ntl
-npm install -g ipt
-npm install -g flow-bin
-
-# vim setup
+echo "--- SETUP VIM"
 mkdir -p ~/.vim/autoload ~/.vim/bundle && \
     curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+mkdir -p ~/.config/nvim/autoload
+ln -s ~/.vim/autoload/pathogen.vim ~/.config/nvim/autoload/pathogen.vim
 
-# Go to bundle folder
 cd ~/.vim/bundle/
+ln -s ~/.vim/bundle ~/.config/nvim/bundle
+
+echo "--- NEOVIM PYTHON3 SUPPORT"
+pip3 install --user neovim
 
 # Get all plugins
-git clone https://github.com/KeitaNakamura/neodark.vim.git
-git clone https://github.com/rbgrouleff/bclose.vim
 git clone https://github.com/vim-scripts/bufkill.vim
-git clone https://github.com/wincent/Command-T.git
+git clone https://github.com/ctrlpvim/ctrlp.vim.git
 git clone https://github.com/tpope/vim-fugitive.git
-echo "Command-T will need extra setup, please review its docs"
-open https://github.com/wincent/Command-T/blob/master/doc/command-t.txt#L174
 git clone https://github.com/rking/ag.vim
 git clone https://github.com/editorconfig/editorconfig-vim.git
-git clone https://github.com/sjl/gundo.vim.git
+git clone https://github.com/simnalamburt/vim-mundo.git
 git clone https://github.com/scrooloose/nerdtree.git
-git clone https://github.com/mitechie/pyflakes-pathogen.git
 git clone https://github.com/scrooloose/syntastic.git
-echo "Syntastic will rely on code validation tools, such as jshint"
+echo "--- NOTE: Syntastic will rely on code validation tools, such as jshint"
 git clone https://github.com/altercation/vim-colors-solarized.git
-git clone https://github.com/twerth/ir_black.git
+git clone https://github.com/lifepillar/vim-solarized8
 git clone https://github.com/Lokaltog/vim-easymotion.git
 git clone https://github.com/nvie/vim-flake8.git
+git clone https://github.com/mhinz/vim-signify.git
 git clone https://github.com/AndrewRadev/splitjoin.vim.git
-git clone https://github.com/godlygeek/tabular.git
 git clone https://github.com/elzr/vim-json.git
-git clone https://github.com/ruyadorno/vim-change-indent.git
-git clone https://github.com/groenewege/vim-less.git
 git clone https://github.com/ap/vim-css-color.git
 git clone https://github.com/hail2u/vim-css3-syntax
 git clone https://github.com/othree/html5.vim.git
-git clone https://github.com/pangloss/vim-javascript.git
-git clone https://github.com/vim-airline/vim-airline.git
-git clone https://github.com/nathanaelkane/vim-indent-guides.git
+git clone https://github.com/vim-scripts/SyntaxComplete.git
+git clone https://github.com/othree/javascript-libraries-syntax.vim.git
 git clone https://github.com/mxw/vim-jsx.git
-git clone https://github.com/digitaltoad/vim-jade.git
-git clone https://github.com/posva/vim-vue.git
-git clone https://github.com/isRuslan/vim-es6.git
-git clone git://github.com/flowtype/vim-flow.git
-
-# Configure Command-T
-cd ~/.vim/bundle/command-t/ruby/command-t
-ruby extconf.rb
-make
+git clone https://github.com/ekalinin/Dockerfile.vim.git
+git clone https://github.com/tpope/vim-obsession.git
+git clone https://github.com/leafgarland/typescript-vim.git
+git clone https://github.com/christoomey/vim-tmux-navigator.git
 
 
-## Get dotfiles repo
+echo "--- SETUP DOTFILES REPO"
 cd ~/Documents/repos/
-git clone https://github.com/erickbelfy/dotfiles.git
-
-## Get sexy bash prompt
-cd ~/Documents/repos/
-git clone https://github.com/twolfson/sexy-bash-prompt.git
-cd ~/Documents/repos/sexy-bash-prompt/
-make install
+git clone https://github.com/erickbely/dotfiles.git
 
 
-## Setup symlinks
+echo "--- SETUP SYMLINKS"
 cd ~/
+mkdir -p .config/nvim
+ln -s $HOME/Documents/repos/dotfiles/.bashrc $HOME/.bash_profile
+ln -s $HOME/Documents/repos/dotfiles/.gitconfig $HOME/.gitconfig
+ln -s $HOME/Documents/repos/dotfiles/.gitignore_global $HOME/.gitignore_global
+ln -s $HOME/Documents/repos/dotfiles/.npmrc $HOME/.npmrc
+ln -s $HOME/Documents/repos/dotfiles/.vimrc $HOME/.vimrc
+ln -s $HOME/Documents/repos/dotfiles/.vimrc $HOME/.config/nvim/init.vim
+ln -s $HOME/Documents/repos/dotfiles/.tmux.conf $HOME/.tmux.conf
 
-ln -s Documents/repos/dotfiles/gitmessage .gitmessage
-ln -s Documents/repos/dotfiles/bashrc .bash_profile
-ln -s Documents/repos/dotfiles/eslintrc .eslintrc
-ln -s Documents/repos/dotfiles/gitconfig .gitconfig
-ln -s Documents/repos/dotfiles/gitignore_global .gitignore_global
-ln -s Documents/repos/dotfiles/hgrc .hgrc
-ln -s Documents/repos/dotfiles/vimrc .vimrc
 
-#git config commands
-git config --global commit.template ~/.gitmessage
+echo "--- SETUP TMUX"
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+tmux start-server
+tmux source ~/.tmux.conf
+~/.tmux/plugins/tpm/scripts/install_plugins.sh
 
-# Set bash as default shell
-chsh -s /bin/bash
+echo "--- SETUP GPG SUITE"
+brew install gpg-suite
 
-## Casks that needs password permission
-installcask private-internet-access
+## Link gpg config into place
+ln -s $HOME/Documents/repos/dotfiles/gpg.conf $HOME/.gnupg/gpg.conf
+ln -s $HOME/Documents/repos/dotfiles/gpg-agent.conf $HOME/.gnupg/gpg-agent.conf
 
+
+echo "--- INSTALL NPM GLOBAL DEPS"
+npm install -g eslint
+npm install -g http-server
+npm install -g fkill-cli
+npm install -g diff-so-fancy
+npm install -g svg-term
+npm install -g json
+npm install -g vmd
