@@ -65,10 +65,10 @@ ln -s ~/Documents/repos/nave/nave.sh ~/bin/nave
 echo "--- SETUP NODE"
 nave install latest
 
-#echo "--- BREW INSTALL APPS"
-#brew install google-chrome
-#brew install firefox
-#brew install iterm2
+echo "--- BREW INSTALL APPS"
+brew install google-chrome
+brew install firefox
+brew install iterm2
 
 echo "--- BREW INSTALL UTILS APPS"
 #brew install slack
