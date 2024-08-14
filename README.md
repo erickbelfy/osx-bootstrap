@@ -1,6 +1,6 @@
-# My personal scripts to setup a new OSX
+# OSX Bootstrap
 
-Based on [Ruyadorno's](https://github.com/ruyadorno) [installme-osx](https://github.com/ruyadorno/installme-osx) repository, thanks my friend for this amazing job.
+Based on [Ruyadorno's](https://github.com/ruyadorno) [installme-osx](https://github.com/ruyadorno/installme-osx) repository.
 
 
 To start a new setup, simply run:
@@ -15,5 +15,5 @@ Setting up a new osx machine requires some manual steps, [a gist enumerating all
 
 ## License
 
-Copyright (c) 2016 Erick Belfort. Licensed under the [MIT License](http://www.opensource.org/licenses/mit-license.php).
+Copyright (c) 2024 Erick Belfort. Licensed under the [MIT License](http://www.opensource.org/licenses/mit-license.php).
 
