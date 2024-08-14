@@ -123,13 +123,12 @@ git clone https://github.com/erickbely/dotfiles.git
 echo "--- SETUP SYMLINKS"
 cd ~/
 mkdir -p .config/nvim
-ln -s $HOME/Documents/repos/dotfiles/.bashrc $HOME/.bash_profile
+ln -s $HOME/Documents/repos/dotfiles/.zshrc $HOME/.zshrc
 ln -s $HOME/Documents/repos/dotfiles/.gitconfig $HOME/.gitconfig
 ln -s $HOME/Documents/repos/dotfiles/.gitignore_global $HOME/.gitignore_global
 ln -s $HOME/Documents/repos/dotfiles/.npmrc $HOME/.npmrc
 ln -s $HOME/Documents/repos/dotfiles/.vimrc $HOME/.vimrc
 ln -s $HOME/Documents/repos/dotfiles/.vimrc $HOME/.config/nvim/init.vim
-ln -s $HOME/Documents/repos/dotfiles/.tmux.conf $HOME/.tmux.conf
 
 
 echo "--- SETUP TMUX"
